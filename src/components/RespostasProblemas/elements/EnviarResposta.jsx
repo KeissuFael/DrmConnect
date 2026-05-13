@@ -20,7 +20,6 @@ export default function EnviarResposta({ id, novaRes }){
             console.log(res.error)
         } else{
             alert("deu bom")
-            setDescription('')
             novaRes()
         }
     }
