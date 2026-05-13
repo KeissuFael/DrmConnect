@@ -42,6 +42,7 @@ export default function App(){
       })
       buscarProblemas()
       alert("problema enviado!")
+      setImg(null)
   }catch(error){
     console.error(error)
   }}
