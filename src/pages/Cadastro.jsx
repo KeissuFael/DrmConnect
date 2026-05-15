@@ -8,7 +8,7 @@ export default function Cadastro(){
         const { error } = await supabase.auth.signInWithOAuth({
         provider: "google",
         options: {
-            redirectTo: `htpps://problemas.vercel.app/Home`,
+            redirectTo: `${window.location.origin}/Home`,
             queryParams: {
             access_type: 'offline',
             prompt: 'consent',
