@@ -1,76 +1,60 @@
-import { useEffect, useState } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom"; // Removido o 'data' não utilizado
+import { useState, useEffect } from "react";
 import { supabase } from "./supabase/supabase";
-import Problemas from "./components/Problemas";
-import RespostasProblemas from "./components/RespostasProblemas";
-import { envImagensStorage } from "./services/uploadImages";
+import Login from "./pages/login";
+import Cadastro from "./pages/Cadastro";
+import PrivateRoute from "./components/hooks/PrivateRouter";
+import ProblemasPagina from "./pages/ProblemasPagina";
 
 export default function App(){
-  const [ problemas, setProblemas ] = useState([])
-  const [ nome, setNome ] = useState("")
-  const [ titulo, setTitulo ] = useState("")
-  const [ descricao, setDescricao ] = useState("")
-  const [ img, setImg ] = useState(null)
-
-   async function buscarProblemas(){
-    const res = await supabase
-    .from('problemas')
-    .select('*')
-
-    if(res.error){
-      alert("olha o console")
-      console.error(res.error)
-    } else{
-      setProblemas(res.data)
-    }
-  }
-
-  async function criarProblema() {
-    if(titulo == "" || descricao == ""){
-      alert("escreva algo")
-      return
-    }
-
-    try{
-      let imgUrlLocal = await envImagensStorage(img)
-      const res = await supabase
-      .from('problemas')
-      .insert({
-        user: nome,
-        titulo,
-        description: descricao,
-        imagens: imgUrlLocal
-      })
-      buscarProblemas()
-      alert("problema enviado!")
-      setImg(null)
-  }catch(error){
-    console.error(error)
-  }}
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true); // Adicionado para controlar o carregamento inicial
 
   useEffect(() => {
-    buscarProblemas()
-  }, [])  
+    async function carregarSessao() {
+      try {
+        const { data: { session } } = await supabase.auth.getSession();
+        if (session) {
+          setUser(session.user);
+        }
+      } catch (error) {
+        console.error("Erro ao carregar sessão:", error);
+      } finally {
+        setLoading(false); // Finaliza o carregamento da sessão local
+      }
+    }
+    
+    carregarSessao();
 
-  return(
-    <div>
-      <h1>Bem-vindo aos problemas.com</h1>
-      <p>encontre a solução aq!!!!</p>
-      <div>
-        <input type="text" onChange={e => setNome(e.target.value)} placeholder="Nome De Usuário"/> <br />
-        <input type="text" onChange={e => setTitulo(e.target.value)} placeholder="Titulo"/> <br />
-        <textarea onChange={e => setDescricao(e.target.value)} placeholder="Descrição do Problema"></textarea> <br />
-        <span>para colocar imagens, baixe e clique no botão abaixo</span> <br />
-        <input type="file" accept="image/png,image/jpeg" onChange={e => setImg(e.target.files[0])} /><br />  
-        <button onClick={criarProblema}>postar</button>
-      </div>
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
+      if (session) {
+        setUser(session.user);
+        // Limpa os tokens do Google da URL sem recarregar a página
+        window.history.replaceState({}, document.title, window.location.pathname);
+      } else {
+        setUser(null);
+      }
+      setLoading(false); // Garante que o loading pare quando o Google responder
+    });
 
-      {problemas.map((item, index) =>(
-        <div key={index} className="perguntas">
-        <Problemas user={item.user} titulo={item.titulo} conteudo={item.description} imgs={item.imagens}/> <br />
-        <RespostasProblemas id={item.id} /> 
-        </div>
-      ))}
+    return () => subscription.unsubscribe();
+  }, []);
 
-    </div>
-  )
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/cadastro" element={<Cadastro />} />
+        <Route 
+          path="/Home" 
+          element={
+            // Passamos o loading para o PrivateRoute não barrar o usuário antes da hora
+            <PrivateRoute user={user} loading={loading}>
+              <ProblemasPagina />
+            </PrivateRoute>
+          } 
+        />
+      </Routes>
+    </BrowserRouter>
+  );
 }
