@@ -12,6 +12,7 @@ export default function App(){
   useEffect(() => {
     async function carregarSessao() {
       try {
+        //oi keissu
         const { data: { session } } = await supabase.auth.getSession();
         if (session) {
           setUser(session.user);
