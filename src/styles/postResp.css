@@ -1,0 +1,27 @@
+.resps {
+  background-color: #0f1115;
+  border: 1px solid #232730;
+  border-radius: 12px;
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto 40px auto;
+  padding: 20px 24px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  box-sizing: border-box;
+}
+
+.lista-respostas {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 12px 0;
+}
+
+/* estilo interno para cada item */
+.lista-respostas > * {
+  background-color: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  padding: 12px 16px;
+  display: block;
+  color: #e6edf3;
+}

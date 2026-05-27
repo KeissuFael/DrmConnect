@@ -1,0 +1,15 @@
+.form-post{
+    display: flex;
+    flex-direction: column;
+}
+
+.form-envio{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.form-text > textarea{
+    border: none;
+    border-radius: 10px;
+    resize: none;
+}

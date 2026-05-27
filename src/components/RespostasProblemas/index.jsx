@@ -2,7 +2,9 @@ import { useState, useEffect } from "react"
 import Resposta from "./elements/Resposta"
 import EnviarResposta from "./elements/EnviarResposta"
 import { supabase } from "../../supabase/supabase"
-export default function RespostasProblemas({ id }){
+import '../../styles/postResp.css'
+
+export default function RespostasProblemas({ id, curtida }){
     const [ respostas, setRespostas ] = useState([])
     async function buscarRespostasProblemas() {
         const res = await supabase
@@ -24,9 +26,9 @@ export default function RespostasProblemas({ id }){
     return(
         <div className="resps">
             {respostas.map((item, index) => (
-                respostas.length <= 0 ? <p>não há soluções</p> : <ul><Resposta key={index} resp={item.description} user={item.user_responde} /></ul>
+                respostas.length <= 0 ? <p>não há soluções</p> : <ul className="lista-respostas"><Resposta key={index} resp={item.description} user={item.user_responde} /></ul>
             ))}
-            <EnviarResposta id={id} novaRes={buscarRespostasProblemas}/>
+            <EnviarResposta idP={id} quantidadeDeCurtidas={curtida} novaRes={buscarRespostasProblemas}/>
         </div>
     )
 }

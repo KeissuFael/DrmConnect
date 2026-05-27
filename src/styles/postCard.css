@@ -1,0 +1,64 @@
+/* Container principal do post */
+.content-post {
+  background-color: #0f1115;
+  border-radius: 12px;
+  max-width: 700px;
+  width: 100%;
+  margin: 20px auto 0 auto;
+  padding: 24px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* Cabeçalho do post (Nome e Avatar) */
+.cabeca-post {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+/* O span que envolve o texto e a imagem do usuário */
+.cabeca-post span {
+  color: #8b949e;
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Imagem do avatar do usuário */
+.cabeca-post img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Corpo do post (Descrição e Imagem postada) */
+.corpo-post {
+  color: #e6edf3;
+  font-size: 16px;
+  line-height: 1.6;
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Imagem de mídia anexada ao post */
+.corpo-post img {
+  max-width: 150px;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: contain;
+  margin-top: 10px;
+}

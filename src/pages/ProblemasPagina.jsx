@@ -1,15 +1,19 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { supabase } from "../supabase/supabase";
 import Problemas from "../components/Problemas";
 import RespostasProblemas from "../components/RespostasProblemas";
 import { envImagensStorage } from "../services/uploadImages";
 import { useNavigate } from "react-router-dom";
+import iconImagem from "./../assets/iconImagem.png"
+import "./../styles/formPost.css"
+import { buscarImagem } from "../services/sercheAvatar";
 
 export default function ProblemasPagina(){
   const [ problemas, setProblemas ] = useState([])
-  const [ titulo, setTitulo ] = useState("")
   const [ descricao, setDescricao ] = useState("")
   const [ img, setImg ] = useState(null)
+  const [ fotoDoPerfil, setFotoDoPerfil ] = useState("")
+  const textareaRef = useRef(null)
   const irPara = useNavigate()
 
    async function buscarProblemas(){
@@ -31,7 +35,7 @@ export default function ProblemasPagina(){
   }
 
   async function criarProblema() {
-    if(titulo == "" || descricao == ""){
+    if(descricao == ""){
       alert("escreva algo")
       return
     }
@@ -44,12 +48,11 @@ export default function ProblemasPagina(){
         return
       }
       const usuarioNome = user.user_metadata?.full_name || user.user_metadata?.name ||  user.user_metadata?.display_name || "???"
-      const avatar = user.user_metadata?.avatar_url || "sem foto" 
+      const avatar = user.user_metadata?.avatar_url || null 
       const res = await supabase
       .from('problemas')
       .insert({
         user: usuarioNome,
-        titulo,
         description: descricao,
         imagens: imgUrlLocal,
         id_user: user.id,
@@ -66,27 +69,47 @@ export default function ProblemasPagina(){
 
   useEffect(() => {
     buscarProblemas()
-  }, [])  
+    async function carregarUrlAvatar() {
+      const url = await buscarImagem()
+      if(url == null || !url ){
+        setFotoDoPerfil("https://placeholder.com")
+      }else{
+        setFotoDoPerfil(url)
+      }
+    }
+    carregarUrlAvatar()
+  }, [])
+  
+  useEffect(() =>{
+    const textarea = textareaRef.current
+    if(textarea){
+      textarea.style.height = 'auto'
+      textarea.style.height = `${textarea.scrollHeight}px`
+    }
+  }, [descricao])
 
   return(
     <div>
-      <h1>Bem-vindo aos problemas.com</h1>
-      <p>encontre a solução aq!!!!</p>
       <button onClick={() => irPara("/home/seuUser")}>Editar perfil</button>
       <button onClick={() => irPara("/feedback")}>Feedback</button>
       <button onClick={() => desFazerLogin()}>Logout</button>
-      <div>
-        <input type="text" value={titulo} onChange={e => setTitulo(e.target.value)} placeholder="Titulo"/> <br />
-        <textarea value={descricao} onChange={e => setDescricao(e.target.value)} placeholder="Descrição do Problema"></textarea> <br />
-        <span>para colocar imagens, baixe e clique no botão abaixo</span> <br />
-        <input type="file" accept="image/png,image/jpeg" onChange={e => setImg(e.target.files[0])} /><br />  
-        <button onClick={criarProblema}>postar</button>
+      <div className="form-post">
+        <div className="form-text">
+          <img src={fotoDoPerfil} style={{width: "30px"}}/>
+          <textarea maxLength={200} ref={textareaRef} value={descricao} onChange={e => setDescricao(e.target.value)} placeholder="O que você está pensando hoje?" style={{width: "500px"}}></textarea> <br />
+        </div>
+        <div className="form-envio">
+          <input type="file" accept="image/png,image/jpeg" onChange={e => setImg(e.target.files[0])} id="input-file" style={{display: "none"}}/>
+          <label htmlFor="input-file"><img src={iconImagem} alt="Icon de imagem" style={{width: "30px", height: "30px", cursor: "pointer"}}/></label>  
+          <button onClick={criarProblema}>postar</button>
+        </div>
+
       </div>
 
       {problemas.map((item, index) =>(
         <div key={index} className="perguntas">
         <Problemas user={item.user} titulo={item.titulo} conteudo={item.description} imgs={item.imagens} avatar={item.avatar}/> <br />
-        <RespostasProblemas id={item.id} /> 
+        <RespostasProblemas id={item.id} curtida={item.curtidas}/> 
         </div>
       ))}
 

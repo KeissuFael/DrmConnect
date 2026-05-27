@@ -14,7 +14,8 @@ export default function Cadastro(){
             password: senha,
             options:{
                 data:{
-                    full_name: userName
+                    full_name: userName,
+                    avatar_url: 'https://scnxpjdfdwphaxgonxvq.supabase.co/storage/v1/object/public/perfilFotoDefault/219eaea67aafa864db091919ce3f5d82.jpg'
                 }
             }
         })
