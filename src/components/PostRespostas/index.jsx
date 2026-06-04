@@ -15,7 +15,6 @@ export default function PostRespostas({ id, curtida }){
         if(res.error){
             console.log(res.error)
         } else{
-            console.log(res.data)
             setRespostas(res.data)
         }
     }

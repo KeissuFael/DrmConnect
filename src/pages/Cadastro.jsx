@@ -45,8 +45,7 @@ export default function Cadastro(){
     };
     return(
         <div className="cadastro-tudo">
-            <h1>Bem-vindo ao Problemas.com</h1>
-            <p>encontre sua solução aqui</p>
+            <h1>Cadastro</h1>
 
             <div className="form-cadastro">
                 <input type="text" placeholder="Nome de Usuario" onChange={e => setUserName(e.target.value)}/> <br />

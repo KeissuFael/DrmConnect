@@ -10,12 +10,12 @@ export default function AjudaDrm(){
     const [pagina, setPagina] = useState(0)
     const [carregamento, setCarregamento] = useState(false)
     const [temMais, setTemMais] = useState(true)
-    // usa o mesmo sistema de puxar 10 pergunta (mais explicaçao no ProblemasPaginga.jsx)
+    // usa o mesmo sistema de puxar 10 pergunta (mais explicaçao no Home.jsx)
     const irPara = useNavigate()
 
     async function buscarPerguntas(estaPagina) {
         setCarregamento(true)
-        //mais explicaçao no ProblemasPaginga.jsx
+        //mais explicaçao no Home.jsx
         const comeca = estaPagina * 10
         const ate = comeca + 10 - 1        
         const res = await supabase
@@ -39,7 +39,7 @@ export default function AjudaDrm(){
         }
         setCarregamento(false)
     }
-    // mais explicaçao no ProblemasPaginga.jsx
+    // mais explicaçao no Home.jsx
     const verMais = () => {
         if(!carregamento && temMais){
         setPagina((paginaAnterio) => paginaAnterio + 1)
@@ -48,7 +48,7 @@ export default function AjudaDrm(){
 
     useEffect(() => {
         buscarPerguntas(pagina)
-    }, [pagina]) // mais explicaçao no ProblemasPaginga.jsx
+    }, [pagina]) // mais explicaçao no Home.jsx
 
 
     // na linha 64, quando ele clicar na pergunta ele vai ser jogar para o componente da pergunta, e la, ele vai puxa a pegunta com o id da url
