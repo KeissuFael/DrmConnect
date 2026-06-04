@@ -1,0 +1,19 @@
+footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 15px;
+}
+
+.logoTTK{
+    height: 50px;
+}
+.logoInsta{
+    height: 50px;
+}
+.logoAP{
+    height: 50px;
+}
+.logoEp{
+    height:50px;
+}
