@@ -9,9 +9,8 @@ export default function Footer(){
         <footer>
             <div className="criadores">
                 <img src={logoEp} className="logoEp" alt="logo da ep"/>
-                <p>
-                    Feito por: 2°Desenvolvimentos de Sistemas da <br /> EEEP Deputado Roberto Mesquita
-                </p>
+                <p>EEEP Deputado Roberto Mesquita</p>
+                <p>Feito por: 2°Desenvolvimentos de Sistemas</p>
             </div>
             <div className="mediasSociais">
                 <h3>Redes sociais</h3>

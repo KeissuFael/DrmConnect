@@ -8,6 +8,8 @@ import evoluir from "./../assets/paginaInicial/card_icons/evoluir_icon.png"
 import perguntar from "./../assets/paginaInicial/card_icons/perguntar_icon.png"
 import responder from "./../assets/paginaInicial/card_icons/responder_icon.png"
 
+import "./../styles/inicial.css"
+
 /* LOGO JA IMPORTADA */
 export default function  Inicial(){
     /* pagina de explicação do projeto, onde mostra pequena historia, e praq server */

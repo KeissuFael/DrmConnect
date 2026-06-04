@@ -2,18 +2,26 @@ footer{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    font-size: 15px;
+    padding: 0px 35px;
+}
+.icones{
+    display: flex;
+    gap: 15px;
 }
 
 .logoTTK{
     height: 50px;
+    border-radius: 10px;
 }
 .logoInsta{
     height: 50px;
+    border-radius: 10px;
 }
 .logoAP{
-    height: 50px;
+    height: 40px;
+    border-radius: 10px;
 }
 .logoEp{
-    height:50px;
+    height: 70px;
+    border-radius: 100px;
 }
