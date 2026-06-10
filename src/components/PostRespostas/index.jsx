@@ -8,9 +8,9 @@ export default function PostRespostas({ id, curtida }){
     const [ respostas, setRespostas ] = useState([])
     async function buscarRespostas() {
         const res = await supabase
-        .from('problemas_respostas')
+        .from("post_respostas")
         .select('*')
-        .eq('id_problema', id)
+        .eq('id_post', id)
 
         if(res.error){
             console.log(res.error)

@@ -43,7 +43,7 @@ export default function Home(){
     const ate = comeca + 10 - 1
 
     const res = await supabase
-    .from('problemas')
+    .from("posts")
     .select('*')
     .order('create_at', {ascending: false}) // ordenar do mais recente para o mais antigo
     .range(comeca, ate) // range de post q ele deve puxar, usando as variveis que eu expliquei acima
@@ -80,7 +80,7 @@ export default function Home(){
 
     try{
       // chama função do /services, para joga a imagem que o usuario quer colocar, no bucket do supa
-      let imgUrlLocal = await envImagensStorage("imagens-problemas", img)
+      let imgUrlLocal = await envImagensStorage("imagens-posts", img)
       // faz verificação de sessao/usuario para consegui nome de usuario e foto do tal
       const { data: { user }, error } = await supabase.auth.getUser()
       if(!user || error){
@@ -90,7 +90,7 @@ export default function Home(){
       const usuarioNome = user.user_metadata?.full_name || user.user_metadata?.name ||  user.user_metadata?.display_name || "???"
       const avatar = user.user_metadata?.avatar_url || null 
       const res = await supabase
-      .from('problemas')
+      .from("posts")
       .insert({
         user: usuarioNome,
         description: descricao,

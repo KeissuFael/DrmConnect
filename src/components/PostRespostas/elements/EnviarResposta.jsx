@@ -40,9 +40,9 @@ export default function EnviarResposta({ idP, novaRes, quantidadeDeCurtidas }){
         }
         const nomeDeUsuario = user.user_metadata?.full_name || user.user_metadata?.name ||  user.user_metadata?.display_name || "??"
         const res = await supabase
-        .from('problemas_respostas')
+        .from(import.meta.env.TABELA_2)
         .insert({
-            id_problema: idP,
+            id_post: idP,
             description,
             user_responde: nomeDeUsuario
         })
