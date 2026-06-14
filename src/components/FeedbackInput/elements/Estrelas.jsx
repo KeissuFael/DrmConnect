@@ -19,6 +19,7 @@ export default function Estrelas({funcao}){
     }
     return(
         <>
+        <div className="estrelas">
         <div style={{display: "flex", justifyContent: "center", margin: "10px 0"}}>
         <input type="checkbox"  id="estrela1" onClick={() => verificarCheckBox()} className="estrela-checkbox"/>
         <label htmlFor="estrela1" className="estrela-label">★</label>
@@ -30,6 +31,7 @@ export default function Estrelas({funcao}){
         <label htmlFor="estrela4" className="estrela-label">★</label>
         <input type="checkbox"  id="estrela5" onClick={() => {estrela4.checked = true, estrela3.checked = true, estrela2.checked = true, estrela1.checked = true, verificarCheckBox()}} className="estrela-checkbox"/>
         <label htmlFor="estrela5" className="estrela-label">★</label>
+        </div>
         </div>
         </>
     )

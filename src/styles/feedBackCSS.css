@@ -29,4 +29,125 @@
   display: flex;
   width: 100vw;
   height: 100vh;
+  background-color: #010a36;
+}
+
+.telaFeedback{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 150px;
+}
+
+.titulo{
+  display: flex;
+  justify-content: center;
+}
+
+.inputsFeedback {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.inputsFeedback input {
+  padding: 15px 15px;
+  border: white;
+  border-radius: 10px;
+  width: 350px;
+  background-color: #060f1e;
+}
+
+.inputsFeedback textarea{
+  width: 350px;
+  padding: 10px 30px;
+  background-color: #060f1e;
+}
+
+.areaDoTextarea{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 30vh;
+  margin: 0 50px;
+}
+
+.cardFeedback{
+  display: flex;
+  justify-content: center;
+  border: 3px solid #000b1f;
+  box-shadow: 2px 4px 10px rgba(255, 255, 255, 0.2); 
+  border-radius: 10px;
+  flex-direction: column;
+  background-color: #000b27;
+  padding: 0;
+  width: 50rem;
+}
+
+.cardFeedback button{
+  padding: 15px 15px;
+  border: white;
+  border-radius: 10px;
+  width: 350px;
+}
+
+.enviarFeedback{
+  display: flex;
+  justify-content: center;
+}
+
+.areaDoTexto{
+  display: flex;
+  justify-content: flex-start;
+  align-items: start;
+  margin: 0;
+  padding: 0;
+  width: 50rem;
+}
+
+.areaDoTexto p{
+  line-height: 1;
+}
+
+.areaDoTexto h1{
+  line-height: 0.2;
+}
+
+.icon{
+  padding: 10px 0;
+}
+
+.enviarFeedback button{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  cursor: pointer;
+  background: linear-gradient(0.25turn, #7c3aed, #06b6d4);
+  margin: 5px 0;
+  transition: background-color 0.7s ease, transform 0.5s ease;
+}
+
+.enviarFeedback button:hover{
+  background: linear-gradient(0.25turn, #7034d6, #059bb6);
+  transform: translateY(-3px);
+}
+
+.experienciaUsuario{
+  display: flex;
+  border: 3px solid white;
+  border-radius: 5px;
+  width: 25rem;
+  align-items: center;
+  font-size: 10px;
+  margin: 0 224px;
+  margin-bottom: 5px ;
+}
+
+.experienciaUsuario h3{
+  line-height: 1.3;
 }
