@@ -164,7 +164,7 @@ export default function Home(){
         </div>
 
         {posts.map((item, index) =>(
-          <div key={index} className="perguntas">
+          <div key={index} className="perguntas-home">
           <PostComunidade user={item.user} titulo={item.titulo} conteudo={item.description} imgs={item.imagens} avatar={item.avatar}/> <br />
           <PostRespostas id={item.id} curtida={item.curtidas}/> 
           </div>

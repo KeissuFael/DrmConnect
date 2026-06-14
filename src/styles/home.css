@@ -100,7 +100,7 @@
   background: #5750e6;
 }
 
-.perguntas {
+.perguntas-home {
   width: 100%;
   max-width: 800px;
   margin-top: 15px;
@@ -110,7 +110,7 @@
   transition: 0.2s;
 }
 
-.perguntas:hover {
+.perguntas-home:hover {
   background: rgba(255, 255, 255, 0.06);
 }
 

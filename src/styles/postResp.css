@@ -115,7 +115,7 @@
   box-shadow: 0 0 0 3px rgba(80, 130, 255, 0.15);
 }
 
-button {
+.resps > button {
   background: linear-gradient(135deg, #2b5cff, #3d7bff);
   color: white;
   border: none;

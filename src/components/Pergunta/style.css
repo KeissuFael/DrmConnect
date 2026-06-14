@@ -1,0 +1,8 @@
+.card-pergunta {
+    margin-bottom: 100px;
+}
+
+.card-pergunta > h1 {
+    font-size: 18px;
+    margin-left: 50px;
+}

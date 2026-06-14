@@ -57,20 +57,23 @@ export default function AjudaDrm(){
     return(
         <div className="ajudadrm-tudo">
             <Sidebar />
+            <div className="form-ajuda">
             <div className="enviar-pergunta">
                 <h3>Crie um pergunta</h3>
-                <button onClick={() => irPara("/criarpergunta")}>+</button>
+                <button onClick={() => irPara("/criarpergunta")}>Criar</button>
             </div>
-            <div className="Perguntas">
+            <div className="perguntas">
                 {perguntas.map((item) => (
                     <Link 
                     to={`/perguntas/${item.id}`}
-                    key={item.id}
-                    style={{ textDecoration: "none", color: 'inherit'}}>
+                    key={item.id}>
                         <Pergunta titulo={item.titulo} user={item.user_nome} userAvatar={item.user_avatar}/>
+                        <hr />
                     </Link>
                 ))}
-                {carregamento ? (<p>Carregando posts...</p>) : temMais ? (
+            </div>
+
+            {carregamento ? (<p>Carregando posts...</p>) : temMais ? (
                     <button onClick={verMais} style={{ cursor: 'pointer' }}>
                     Carregar mais
                     </button>
