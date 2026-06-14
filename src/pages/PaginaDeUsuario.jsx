@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { supabase } from "../supabase/supabase";
 import { useNavigate } from "react-router-dom";
 import { envImagensStorage } from "../services/uploadImages";
+import { ImageUp } from 'lucide-react';
 import Sidebar from "../layout/Sidebar"
 import "../styles/perfil.css"
 /* ESSA É A PAGINA PARA USUARIO EDITAR SEU PERFIL */
@@ -32,7 +33,7 @@ export default function PaginaDeUsuario(){
         buscarUser()
     }, [])
     // função para mudar o nome de usuario
-    async function mudarNomeDeUsuario() {
+    async function editar() {
         const res = await supabase.auth.updateUser({
             data: { full_name: nome }
         })
@@ -40,39 +41,41 @@ export default function PaginaDeUsuario(){
             alert("mudaça n funcionou")
         }else{
             // quando mudar, ele retorna o user para a home
-            alert("nome alterado")
-            setMudarNome(false)
-            irPara("/home")
-        }
-    }
-    //função para mudar a foto de perfil
-    async function mudarFotoDePerfil() {
-        if(img == null){
-            alert("coloque algo")
-            return
-        }
-        // joga a imagem para seu butcket e pega a url da tal
-        const imgUrl = await envImagensStorage("perfilFotoDefault", img)
-        const res = await supabase.auth.updateUser({
-            data:{
-                avatar_url: imgUrl
+            if(img !== null){
+                const imgUrl = await envImagensStorage("perfilFotoDefault", img)
+                const res = await supabase.auth.updateUser({
+                    data:{
+                        avatar_url: imgUrl
+                    }
+                })
+                alert("Edição Feito")
+                setMudarNome(false)
+                irPara("/home")
+            } else{
+                alert("nome alterado")
+                setMudarNome(false)
+                irPara("/home")
             }
-        })
-        if(res.error){
-            alert("algo deu errado")
-        }else{
-            alert("deu certo")
-            setMudarNome(false)
-            irPara("/home")
-        }
+        } 
     }
     return(
         <div className="container-perfil">
             <Sidebar />
-            {!mudarNome ? <img src={urlImg} /> : <input type="file" accept="image/png,image/jpeg" onChange={e => setImg(e.target.files[0])} />}
-            {!mudarNome ? <span></span> : <button onClick={() => mudarFotoDePerfil()}>Mudar foto</button>}
-            {!mudarNome ? <span><h1>{nome}</h1></span> : <input type="text" value={nome} onChange={e => setNome(e.target.value)}/>}
-            {!mudarNome ? <button onClick={() => setMudarNome(true)}>Editar</button> : <button onClick={() => mudarNomeDeUsuario()}>Alterar</button>}
+            <div className="vizualizar-perfil">
+                <img src={urlImg} id="imagem-do-perfil"/>
+                <h3><span>{nome}</span></h3>
+                <button onClick={() => setMudarNome(true)}>Editar</button>    
+            </div>
+            {mudarNome && (
+                <div className="edicao-de-perfil">
+                    <div className="prin">
+                    <label htmlFor="imagem-envio" style={{cursor: "pointer"}}><ImageUp /><br />Escolher Foto De Perfil</label>
+                    <input id="imagem-envio" type="file" accept="image/png,image/jpeg" onChange={e => setImg(e.target.files[0])} style={{display: "none"}}/> <br />
+                    <input type="text" value={nome} onChange={e => setNome(e.target.value)}/> <br />
+                    <button onClick={() => editar()}>Alterar</button>
+                    </div>
+                </div>
+            ) }
        </div>
     )
 }

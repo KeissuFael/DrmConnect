@@ -2,4 +2,96 @@
     display: flex;
     width: 100vw;
     height: 100vh;
+    background-color: #15163F;
+}
+
+.vizualizar-perfil{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    color: white;
+}
+
+#imagem-do-perfil{
+    border-radius: 250px;
+}
+
+.vizualizar-perfil > h3{
+    font-size: 28px;
+}
+
+.vizualizar-perfil > button{
+  background: #6c63ff;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+  margin: 10px 0;
+}
+
+.edicao-de-perfil{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.39);
+}
+
+.prin{
+    text-align: center;
+    background-color: black;
+    border-radius: 30px;
+    padding: 50px;
+    margin: 10px;
+    animation: op 0.2s ease-in;
+}
+
+.prin > input{
+    margin: 31px;
+    padding: 15px 15px;
+    border: white;
+    border-radius: 10px;
+    width: 350px;
+    background-color: #060f1e;
+    transition: 0.2s;
+}
+
+.prin > input:hover{
+    transform: scale(1.05);
+    box-shadow: 1px 1px 1px 1px rgba(255, 255, 255, 0.493);
+}
+
+.prin > input:focus{
+    transform: scale(1.05);
+    border: 0 none;
+    outline: 0;
+    box-shadow: 1px 1px 1px 1px rgba(255, 255, 255, 0.493);
+}
+
+.prin > button{
+    background: #6c63ff;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+@keyframes op{
+    0%{
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
 }
