@@ -57,11 +57,12 @@ export default function AjudaDrm(){
     return(
         <div className="ajudadrm-tudo">
             <Sidebar />
+            <div className="form-ajuda">
             <div className="enviar-pergunta">
                 <h3>Crie um pergunta</h3>
                 <button onClick={() => irPara("/criarpergunta")}>+</button>
             </div>
-            <div className="Perguntas">
+            <div className="perguntas">
                 {perguntas.map((item) => (
                     <Link 
                     to={`/perguntas/${item.id}`}
@@ -77,6 +78,7 @@ export default function AjudaDrm(){
                 ) : (
                     <p style={{ color: 'gray' }}>Você zerou essa aba!!</p>
                 )}
+            </div>
             </div>
         </div>
     )

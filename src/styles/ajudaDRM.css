@@ -1,5 +1,33 @@
 .ajudadrm-tudo {
     display: flex;
-    width: 100vw;
-    height: 100vh;
+    background-color: #15163F;
+    margin: 0px;
+    padding: 0px;
+}
+
+.form-ajuda {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.enviar-pergunta {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border: solid white;
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+.perguntas {
+    display: flex;
+    justify-content: center;
+    border: solid white;
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+.perguntas img {
+    width: 30px;
+    height: 30px;
 }
