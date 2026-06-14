@@ -1,0 +1,128 @@
+.tudo-comunidade {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background-color: #15163F;
+  overflow: hidden;
+}
+
+.tudo-comunidade > :first-child {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 250px;
+  flex-shrink: 0;
+  z-index: 1000;
+}
+
+.posts {
+  margin-left: 250px;
+  flex: 1;
+  height: 100vh;
+  overflow-y: auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  scroll-behavior: smooth;
+}
+
+.form-post {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 600px;
+  background: rgba(0, 0, 0, 0.25);
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(6px);
+}
+
+.form-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.form-text img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.form-text > textarea {
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  resize: none;
+  padding: 10px;
+  outline: none;
+  max-height: 120px;
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+}
+
+.form-envio {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.form-envio label img {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.form-envio label img:hover {
+  transform: scale(1.1);
+}
+
+.form-envio button {
+  background: #6c63ff;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.form-envio button:hover {
+  transform: scale(1.05);
+  background: #5750e6;
+}
+
+.perguntas {
+  width: 100%;
+  max-width: 800px;
+  margin-top: 15px;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 10px;
+  border-radius: 10px;
+  transition: 0.2s;
+}
+
+.perguntas:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.posts::-webkit-scrollbar {
+  width: 8px;
+}
+
+.posts::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+}
+
+.posts::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.35);
+}

@@ -3,7 +3,7 @@ import { supabase } from "../supabase/supabase";
 import { envImagensStorage } from "../services/uploadImages";
 import { useNavigate } from "react-router-dom";
 import iconImagem from "./../assets/iconImagem.png"
-import "./../styles/formPost.css"
+import "./../styles/home.css"
 import { buscarImagem } from "../services/sercheAvatar";
 import PostComunidade from "../components/PostComunidade";
 import PostRespostas from "../components/PostRespostas";
@@ -148,37 +148,38 @@ export default function Home(){
     <div className="tudo-comunidade">
       <Sidebar />
 
-      <div className="form-post">
-        <div className="form-text">
-          <img src={fotoDoPerfil} style={{width: "30px"}}/>
-          <textarea maxLength={200} ref={textareaRef} value={descricao} onChange={e => setDescricao(e.target.value)} placeholder="O que você está pensando hoje?" style={{width: "500px"}}></textarea> <br />
+      <div className="posts">
+        <div className="form-post">
+          <div className="form-text">
+            <img src={fotoDoPerfil} />
+            <textarea maxLength={200} ref={textareaRef} value={descricao} onChange={e => setDescricao(e.target.value)} placeholder="O que você está pensando hoje?" style={{width: "500px"}}></textarea>
+          </div>
+
+          <div className="form-envio">
+            <input type="file" accept="image/png,image/jpeg" onChange={e => setImg(e.target.files[0])} id="input-file" style={{display: "none"}}/>
+            <label htmlFor="input-file"><img src={iconImagem} alt="Icon de imagem" style={{width: "30px", height: "30px", cursor: "pointer"}}/></label>  
+            <button onClick={criarPost}>postar</button>
+          </div>
+
         </div>
 
-        <div className="form-envio">
-          <input type="file" accept="image/png,image/jpeg" onChange={e => setImg(e.target.files[0])} id="input-file" style={{display: "none"}}/>
-          <label htmlFor="input-file"><img src={iconImagem} alt="Icon de imagem" style={{width: "30px", height: "30px", cursor: "pointer"}}/></label>  
-          <button onClick={criarPost}>postar</button>
-        </div>
+        {posts.map((item, index) =>(
+          <div key={index} className="perguntas">
+          <PostComunidade user={item.user} titulo={item.titulo} conteudo={item.description} imgs={item.imagens} avatar={item.avatar}/> <br />
+          <PostRespostas id={item.id} curtida={item.curtidas}/> 
+          </div>
+        ))}
 
+        {carregamento && <p>Carregando posts...</p>}
+
+        {temMais && !carregamento && (
+          <button onClick={verMais} style={{ cursor: 'pointer' }}>
+            Carregar mais
+          </button>
+        )}
+
+        {!temMais && <p style={{ color: 'gray' }}></p>}
       </div>
-
-      {posts.map((item, index) =>(
-        <div key={index} className="perguntas">
-        <PostComunidade user={item.user} titulo={item.titulo} conteudo={item.description} imgs={item.imagens} avatar={item.avatar}/> <br />
-        <PostRespostas id={item.id} curtida={item.curtidas}/> 
-        </div>
-      ))}
-
-      {carregamento && <p>Carregando posts...</p>}
-
-      {temMais && !carregamento && (
-        <button onClick={verMais} style={{ cursor: 'pointer' }}>
-          Carregar mais
-        </button>
-      )}
-
-      {!temMais && <p style={{ color: 'gray' }}>Você zerou essa aba!!</p>}
-
     </div>
   )
 }
