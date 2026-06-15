@@ -6,13 +6,13 @@
     padding: 0px;
     background-color: #010a36;
     height: 100vh;
+    overflow: hidden;
 }
 
 .barraLogo{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    padding-bottom: 300px;
 }
 
 .barraLogo > img {
@@ -22,13 +22,16 @@
 }
 
 .barraEsquerda {
-    width: 10%;
+    width: 15%;
     margin-top: 20px;
+    color: white;
 }
 
 .barraDireita {
-    width: 10%;
+    width: 15%;
     margin-top: 20px;
+    color: white;
+    border: none;
 }
 
 .criarPergunta > h1 {
@@ -41,6 +44,8 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding-top: 200px;
+    padding-bottom: 400px;
 }
 
 .criarPergunta-entrada > input {
@@ -69,4 +74,8 @@
     background-color: rgba(22, 25, 78, 0.466);
     border: 1px gray solid;
     border-radius: 20px;
+}
+
+.criarPergunta > button {
+    margin-bottom: 200px;
 }
