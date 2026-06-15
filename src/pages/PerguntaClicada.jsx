@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { supabase } from "../supabase/supabase";
 import PerguntaDetalhada from "../components/PerguntaDetalhada";
 import RespostasPergunta from "../components/RespostasPergunta";
+import "../styles/perguntaClicada.css"
 /* ESSA A PAGINA PARA QUANDO O USUARIO CLICAR EM UMA PEGUNTA DO AJUDA DRM
 ELE VER MAIS DETALHES! */
 export default function PerguntaClicada(){

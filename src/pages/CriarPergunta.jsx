@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { supabase } from "../supabase/supabase";
 import { useNavigate } from "react-router-dom";
+import "../styles/criarPergunta.css"
 /* PAGINA PARA CRIAR PERGUNTAS PARA A AJUDADRM */
 export default function CriarPergunta(){
     const [titulo, setTitulo] = useState("")
@@ -48,7 +49,7 @@ export default function CriarPergunta(){
 
             <div className="criarPergunta-entrada">
                 <input type="text" placeholder="insira o Titulo" value={titulo} onChange={e => setTitulo(e.target.value)}/> <br />
-                <textarea maxLength={200} ref={textareaRef} value={descricao} onChange={e => setDescricao(e.target.value)} placeholder="O que você está pensando hoje?" style={{width: "500px"}}></textarea>
+                <textarea maxLength={200} ref={textareaRef} value={descricao} onChange={e => setDescricao(e.target.value)} placeholder="O que você está pensando hoje?"></textarea>
             </div>
 
             <button onClick={() => criarPergunta()}>Enviar Pergunta</button>

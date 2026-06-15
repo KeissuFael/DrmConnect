@@ -1,0 +1,49 @@
+.criarPergunta {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0px;
+    padding: 0px;
+    background-color: #010a36;
+    height: 100vh;
+}
+
+.criarPergunta > h1 {
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+
+.criarPergunta-entrada {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.criarPergunta-entrada > input {
+    margin-left: 400px;
+    margin-right: 400px;
+    margin-bottom: 50px;
+    padding-bottom: 20px;
+    padding-top: 5px;
+    padding-left: 10px;
+    background-color: rgba(22, 25, 78, 0.466);
+    border-radius: 10px;
+    border: solid 1px gray;
+}
+
+.criarPergunta-entrada > input::placeholder {
+    color: white;
+}
+
+.criarPergunta-entrada > textarea {
+    margin-left: 300px;
+    margin-right: 300px;
+    padding-bottom: 80px;
+    margin-bottom: 100px;
+    padding-top: 30px;
+    padding-left: 20px;
+    background-color: rgba(22, 25, 78, 0.466);
+    border: 1px gray solid;
+    border-radius: 20px;
+}
