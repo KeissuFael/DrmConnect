@@ -63,11 +63,13 @@ export default function EnviarResposta({ idP, novaRes, quantidadeDeCurtidas }){
     
     return(
         <>
-        <button onClick={() => curtida()}>
-            {qntCurti < 1 ? <Heart  /> : <Heart color="#000" fill="#e20000" /> }
-            </button>
-        <input type="text" value={description} onChange={e => setDescription(e.target.value)} placeholder="Digite sua resposta"/>
-        <button onClick={() => responderProblemas()}>Enviar</button>
+        <input type="text" value={description} className="resposta" onChange={e => setDescription(e.target.value)} placeholder="Digite sua resposta"/>
+
+        <button onClick={() => responderProblemas()} className="enviar">Enviar</button>
+
+        <button onClick={() => curtida()} className="btn-curtida">
+            {qntCurti < 1 ? <Heart  /> : <><Heart /> <span>{qntCurti}</span></>}
+        </button>
         </>
     )
 }
