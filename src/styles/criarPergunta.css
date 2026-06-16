@@ -1,0 +1,106 @@
+.criarPergunta {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0px;
+    padding: 0px;
+    background-color: #010a36;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.barraLogo{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.barraLogo > img {
+    width: 60px;
+    height: 60px;
+
+}
+
+.barraEsquerda {
+    width: 15%;
+    margin-top: 20px;
+    color: white;
+}
+
+.barraDireita {
+    width: 15%;
+    margin-top: 20px;
+    color: white;
+    border: none;
+}
+
+.criarPergunta > h1 {
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+
+.criarPergunta-entrada {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 200px;
+    padding-bottom: 400px;
+}
+
+.criarPergunta-entrada > input {
+    margin-left: 400px;
+    margin-right: 400px;
+    margin-bottom: 50px;
+    padding-bottom: 20px;
+    padding-top: 5px;
+    padding-left: 10px;
+    background-color: rgba(22, 25, 78, 0.466);
+    border-radius: 10px;
+    border: none 1px;
+}
+
+.criarPergunta-entrada > input::placeholder {
+    color: white;
+}
+
+.criarPergunta-entrada > input:focus {
+    border: 0 none;
+    outline: 0;
+}
+
+.criarPergunta-entrada > textarea {
+    margin-left: 300px;
+    margin-right: 300px;
+    padding-bottom: 80px;
+    margin-bottom: 100px;
+    padding-top: 30px;
+    padding-left: 20px;
+    background-color: rgba(22, 25, 78, 0.466);
+    border: 1px none;
+    border-radius: 20px;
+}
+
+<<<<<<< HEAD
+.criarPergunta-entrada > textarea:focus {
+    border: 0 none;
+    outline: 0;
+}
+
+.criarPergunta button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: none;
+    border-radius: 30px ;
+    margin-bottom: 300px;
+    margin-left: 500px;
+    margin-right: 500px;
+    padding: 15px;
+    background: linear-gradient(1turn, #7c3aed, #06b6d4);
+    cursor: pointer;
+=======
+.criarPergunta > button {
+    margin-bottom: 200px;
+>>>>>>> 52779ffbc601e9dd6dfd4f361e1622171da3c7a3
+}

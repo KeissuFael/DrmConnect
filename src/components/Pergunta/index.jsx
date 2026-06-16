@@ -5,9 +5,13 @@ import "./style.css"
 
 export default function Pergunta({ titulo, user, userAvatar }){
     return(
-        <div className='card-pergunta'>
+    <div className='pergunta-normal-tudo'>
+        <div className='info-pergunta'>
             <User user_avatar={userAvatar}>{user}</User>
-            <Titulo>{titulo}</Titulo>
         </div>
+            <div className='titulo-pergunta'>
+            <Titulo>{titulo}</Titulo>
+            </div>
+    </div>
     )
 }

@@ -1,0 +1,35 @@
+.resposta-item {
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    margin-top: 15px;
+    background-color: rgba(25, 25, 119, 0.356);
+}
+
+.resposta-item:hover {
+    cursor: pointer;
+    background-color: rgba(38, 38, 226, 0.103);
+    transition: ease-out 0.2s;
+    transform: scale(1.02);
+}
+
+.resposta-conteudo > p {
+    margin-left: 15px;
+}
+
+.user-info {
+    display: flex;
+    background-color: rgba(37, 37, 179, 0.356);
+    border-radius: 20px;
+    border-bottom-left-radius: 0%;
+    border-bottom-right-radius: 0%;
+    
+}
+
+.user-info img {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+    margin-left: 10px;
+    margin-top: 3px
+}

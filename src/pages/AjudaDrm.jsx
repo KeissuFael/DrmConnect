@@ -68,7 +68,6 @@ export default function AjudaDrm(){
                     to={`/perguntas/${item.id}`}
                     key={item.id}>
                         <Pergunta titulo={item.titulo} user={item.user_nome} userAvatar={item.user_avatar}/>
-                        <hr />
                     </Link>
                 ))}
             </div>
@@ -78,7 +77,7 @@ export default function AjudaDrm(){
                     Carregar mais
                     </button>
                 ) : (
-                    <p style={{ color: 'gray' }}>Você zerou essa aba!!</p>
+                    <h2>Parece que você chegou ao fim...</h2>
                 )}
             </div>
         </div>

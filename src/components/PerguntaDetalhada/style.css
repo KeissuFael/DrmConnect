@@ -1,0 +1,55 @@
+.post-card-detalhado {
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+}
+
+.post-card-detalhado:hover {
+    cursor: pointer;
+    background-color: rgba(38, 38, 226, 0.103);
+    transition: ease-out 0.2s;
+    transform: scale(1.05);
+}
+
+.usuario-info {
+    display: flex;
+    margin-right: 700px;
+    background-color: rgba(37, 37, 179, 0.356);
+    border: none;
+    border-radius: 20px;
+    border-bottom-left-radius: 0%;
+    border-bottom-right-radius: 0%;
+    width: 100%;
+}
+
+.usuario-info > img {
+    display: flex;
+    margin-right: 10px; 
+    margin-left: 20px;
+    margin-top: 5px;
+    width: 50px;
+    height: 50px;
+}
+
+.post-info {
+    padding: 0px;
+    margin: 0px;
+    background-color: rgba(25, 25, 119, 0.356);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding-bottom: 20px;
+}
+
+.post-info > h1 {
+    margin: 0px;
+    margin-top: 15px;
+    margin-left: 20px;
+    font-size: 20px;
+}
+
+.post-info > p {
+    margin: 10px;
+    font-size: 14px;
+}

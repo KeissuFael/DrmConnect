@@ -1,6 +1,8 @@
+import "./respostasVisor.css"
+
 export default function RespostasVisor({ respostas }){
     return(
-        <>
+        <div className="container-respostas">
         {respostas.map((item) =>(
             <div className="resposta-item">
                 <div className="user-info">
@@ -12,6 +14,6 @@ export default function RespostasVisor({ respostas }){
                 </div>
             </div>
         ))}
-        </>
+        </div>
     )
 }

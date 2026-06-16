@@ -24,13 +24,15 @@
 }
 
 .enviar-pergunta > button {
-    margin-left: 600px;
+    margin-left: 1150px;
     margin-right: 20px;
+    margin-bottom: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
     background-color: rgb(0, 102, 255);
     border: none;
     border-radius: 20px;
+    cursor: pointer;
 }
 
 .enviar-pergunta > h3 {
@@ -49,19 +51,22 @@
     margin-right: 200px;
 }
 
-hr {
-    width: 90%;
-    color: #02033a;
-}
-
 .perguntas > a {
-    border-radius: 20px;
     margin-bottom: 50px;
     text-decoration: none gray;
     color: white;
+    transition: transform ease-in-out 300ms;
 }
 
 .perguntas > a:hover {
-    background-color: rgba(22, 25, 160, 0.295);
-    transition: ease-out 0.4s; 
+    border-radius: 25px;
+    background-color: rgba(27, 30, 194, 0.295);
+    transition: ease-out 0.03   s;
+    transform: scale(1.03); 
+}
+
+.ajudadrm-tudo h2 {
+    color: white;
+    font-size: 20px;
+    text-align: center;
 }
