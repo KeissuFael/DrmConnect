@@ -1,3 +1,10 @@
+.respostas-tudo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .respostas-enviar {
     display: flex;
     flex-direction: column;
@@ -27,4 +34,11 @@
     padding-right: 30px;
     background: linear-gradient(1turn, #7c3aed, #06b6d4);
     border: none;
+}
+
+.ver-respostas {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

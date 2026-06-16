@@ -4,6 +4,7 @@
     align-items: center;
     background-color: rgba(22, 25, 160, 0.295);
     min-height: 100vh;
+    overflow: hidden;
 }
 
 .pergunta {
@@ -12,4 +13,10 @@
     justify-content: center;
     border-radius: 20px;
     margin-top: 50px;
+}
+
+.resposta {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
