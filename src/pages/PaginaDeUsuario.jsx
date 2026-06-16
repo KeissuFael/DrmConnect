@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { envImagensStorage } from "../services/uploadImages";
 import { ImageUp } from 'lucide-react';
 import Sidebar from "../layout/Sidebar"
+import { CornerDownLeft } from 'lucide-react';
 import "../styles/perfil.css"
 /* ESSA É A PAGINA PARA USUARIO EDITAR SEU PERFIL */
 export default function PaginaDeUsuario(){
@@ -72,7 +73,8 @@ export default function PaginaDeUsuario(){
                     <label htmlFor="imagem-envio" style={{cursor: "pointer"}}><ImageUp /><br />Escolher Foto De Perfil</label>
                     <input id="imagem-envio" type="file" accept="image/png,image/jpeg" onChange={e => setImg(e.target.files[0])} style={{display: "none"}}/> <br />
                     <input type="text" value={nome} onChange={e => setNome(e.target.value)}/> <br />
-                    <button onClick={() => editar()}>Alterar</button>
+                    <button onClick={() => editar()}>Alterar</button> <br/>
+                    <button onClick={() => setMudarNome(false)} style={{margin: "10px"}}><CornerDownLeft /></button>
                     </div>
                 </div>
             ) }
