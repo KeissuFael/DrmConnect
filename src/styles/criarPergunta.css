@@ -81,7 +81,6 @@
     border-radius: 20px;
 }
 
-<<<<<<< HEAD
 .criarPergunta-entrada > textarea:focus {
     border: 0 none;
     outline: 0;
@@ -99,8 +98,4 @@
     padding: 15px;
     background: linear-gradient(1turn, #7c3aed, #06b6d4);
     cursor: pointer;
-=======
-.criarPergunta > button {
-    margin-bottom: 200px;
->>>>>>> 52779ffbc601e9dd6dfd4f361e1622171da3c7a3
 }
