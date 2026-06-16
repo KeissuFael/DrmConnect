@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { Angry, Frown, Meh, Smile, Laugh } from 'lucide-react';
 
 export default function Estrelas({funcao}){
     const estrela1 = document.getElementById("estrela1")
@@ -22,15 +23,15 @@ export default function Estrelas({funcao}){
         <div className="estrelas">
         <div style={{display: "flex", justifyContent: "center", margin: "10px 0"}}>
         <input type="checkbox"  id="estrela1" onClick={() => verificarCheckBox()} className="estrela-checkbox"/>
-        <label htmlFor="estrela1" className="estrela-label">★</label>
+        <label htmlFor="estrela1" className="estrela-label"><Angry size={40}/></label>
         <input type="checkbox"  id="estrela2" onClick={() => {estrela1.checked = true, verificarCheckBox()}} className="estrela-checkbox"/>
-        <label htmlFor="estrela2" className="estrela-label">★</label>   
+        <label htmlFor="estrela2" className="estrela-label"><Frown size={40}/></label>   
         <input  type="checkbox"  id="estrela3" onClick={() => {estrela2.checked = true, estrela1.checked = true, verificarCheckBox()}} className="estrela-checkbox"/>
-        <label htmlFor="estrela3" className="estrela-label">★</label>
+        <label htmlFor="estrela3" className="estrela-label"><Meh size={40}/></label>
         <input type="checkbox"  id="estrela4" onClick={() => {estrela3.checked = true, estrela2.checked = true, estrela1.checked = true, verificarCheckBox()}} className="estrela-checkbox"/>
-        <label htmlFor="estrela4" className="estrela-label">★</label>
+        <label htmlFor="estrela4" className="estrela-label"><Smile size={40}/></label>
         <input type="checkbox"  id="estrela5" onClick={() => {estrela4.checked = true, estrela3.checked = true, estrela2.checked = true, estrela1.checked = true, verificarCheckBox()}} className="estrela-checkbox"/>
-        <label htmlFor="estrela5" className="estrela-label">★</label>
+        <label htmlFor="estrela5" className="estrela-label"><Laugh size={40}/></label>
         </div>
         </div>
         </>

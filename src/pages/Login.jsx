@@ -1,6 +1,7 @@
 import { supabase } from "../supabase/supabase"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import "../styles/LoginCadastro.css"
 /* auto explicativo */
 export default function Login(){
     const [ email, setEmail ] = useState("")

@@ -6,6 +6,32 @@
     padding: 0px;
     background-color: #010a36;
     height: 100vh;
+    overflow: hidden;
+}
+
+.barraLogo{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.barraLogo > img {
+    width: 60px;
+    height: 60px;
+
+}
+
+.barraEsquerda {
+    width: 15%;
+    margin-top: 20px;
+    color: white;
+}
+
+.barraDireita {
+    width: 15%;
+    margin-top: 20px;
+    color: white;
+    border: none;
 }
 
 .criarPergunta > h1 {
@@ -18,6 +44,8 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding-top: 200px;
+    padding-bottom: 400px;
 }
 
 .criarPergunta-entrada > input {
@@ -53,6 +81,7 @@
     border-radius: 20px;
 }
 
+<<<<<<< HEAD
 .criarPergunta-entrada > textarea:focus {
     border: 0 none;
     outline: 0;
@@ -70,4 +99,8 @@
     padding: 15px;
     background: linear-gradient(1turn, #7c3aed, #06b6d4);
     cursor: pointer;
+=======
+.criarPergunta > button {
+    margin-bottom: 200px;
+>>>>>>> 52779ffbc601e9dd6dfd4f361e1622171da3c7a3
 }

@@ -72,7 +72,7 @@ export default function FeedbackInput(){
     </div>
         <div className="areaFeedback">
         <h1>FeedBacks</h1>
-        <p>Sua opinião nos ajuda a evoluis</p>
+        <p>Sua opinião nos ajuda a evoluir</p>
         <p>Conte para a gente o que você achou da plataforma <br /> e como podemos melhorar sua experiência.</p>
         </div>
         </div>

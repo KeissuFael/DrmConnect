@@ -2,6 +2,8 @@ import { useState, useEffect, useRef } from "react";
 import { supabase } from "../supabase/supabase";
 import { useNavigate } from "react-router-dom";
 import "../styles/criarPergunta.css"
+import Question from "../assets/icons/circle-question-mark.png"
+import { MessageCircleMore, Send, Shield } from 'lucide-react';
 /* PAGINA PARA CRIAR PERGUNTAS PARA A AJUDADRM */
 export default function CriarPergunta(){
     const [titulo, setTitulo] = useState("")
@@ -45,14 +47,15 @@ export default function CriarPergunta(){
 
     return(
         <div className="criarPergunta">
-            <h1>Criar Pergunta</h1>
-
+                <h1>Criar Pergunta</h1>
+            <div className="barraLogo">
+                <span className="barraEsquerda"><hr /></span><MessageCircleMore size={50}/><span className="barraDireita"><hr /></span>
+            </div>
             <div className="criarPergunta-entrada">
                 <input type="text" placeholder="insira o Titulo" value={titulo} onChange={e => setTitulo(e.target.value)}/> <br />
                 <textarea maxLength={200} ref={textareaRef} value={descricao} onChange={e => setDescricao(e.target.value)} placeholder="O que você está pensando hoje?"></textarea>
+             <button onClick={() => criarPergunta()}>Enviar Pergunta</button>
             </div>
-
-            <button onClick={() => criarPergunta()}>Enviar Pergunta</button>
-        </div>
+    </div>
     )
 }
