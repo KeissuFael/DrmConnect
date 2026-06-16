@@ -24,10 +24,10 @@ export default function PostRespostas({ id, curtida }){
     }, [id, curtida])
     return(
         <div className="resps">
+            <EnviarResposta idP={id} quantidadeDeCurtidas={curtida} novaRes={buscarRespostas}/>
             {respostas.map((item, index) => (
                 respostas.length <= 0 ? <p>não há soluções</p> : <ul className="lista-respostas"><Resposta key={item.id} resp={item.description} user={item.user_responde} /></ul>
             ))}
-            <EnviarResposta idP={id} quantidadeDeCurtidas={curtida} novaRes={buscarRespostas}/>
         </div>
     )
 }
