@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { supabase } from "../supabase/supabase"
+import "../styles/LoginCadastro.css"
 /* auto explicativo tbm */
 export default function Cadastro(){
     const [ userName, setUserName ] = useState("")
@@ -48,9 +49,9 @@ export default function Cadastro(){
             <h1>Cadastro</h1>
 
             <div className="form-cadastro">
-                <input type="text" placeholder="Nome de Usuario" onChange={e => setUserName(e.target.value)}/> <br />
-                <input type="text" placeholder="email" onChange={e => setEmail(e.target.value)} /> <br />
-                <input type="text" placeholder="senha" onChange={e => setSenha(e.target.value)}/> <br />
+                <input type="text" placeholder="Nome de Usuário" onChange={e => setUserName(e.target.value)}/> <br />
+                <input type="text" placeholder="Email" onChange={e => setEmail(e.target.value)} /> <br />
+                <input type="text" placeholder="Senha" onChange={e => setSenha(e.target.value)}/> <br />
                 <button onClick={() => cadastrar()}>Cadastrar</button>
                 <button  onClick={() => handleOAuthLogin("google")}>
                     cadastrar com o google

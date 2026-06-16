@@ -62,9 +62,9 @@ export default function Login(){
                 <input type="password" onChange={e => setSenha(e.target.value)} placeholder="Insira sua senha"/> <br />
               <button onClick={logar}>Logar</button> <br />
                 <button onClick={handleOAuthLogin}>Entrar com o google</button> <br />
-                <p>Não tem conta? crie!</p>
+                <p>Não tem conta? Crie!</p>
                 <button onClick={() => irPara("/cadastro")}>Cadastrar</button> 
-                <p>Esqueceu sua senha? redefinar</p>
+                <p>Esqueceu sua senha? Redefinar</p>
                 <button onClick={() => resetSenha()}>Redefinir senha</button>
             </div>
         </div>
