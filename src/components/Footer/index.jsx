@@ -2,9 +2,11 @@ import instagram from "./../../assets/paginaInicial/socialMedias/Instagram_logo.
 import tiktok from "./../../assets/paginaInicial/socialMedias/tiktok_logo.png"
 import animeProfile from "./../../assets/paginaInicial/patriocinadores/animeprofile.png";
 import logoEp from "./../../assets/paginaInicial/patriocinadores/logoEP.png";
+import { useNavigate } from "react-router-dom";
 import "./footer.css"
 
 export default function Footer() {
+    const irPara = useNavigate()
     return (
         <footer className="footer">
             <div className="redesSociais">
@@ -19,7 +21,7 @@ export default function Footer() {
             <div className="suporte">
                 <h3>Suporte</h3>
                 <a href="#">Política de Privacidade</a>
-                <a href="#">Termos de Uso</a>
+                <a onClick={() => irPara("/termos")}>Termos de Uso</a>
                 <a href="#">Fale Conosco</a>
             </div>
 

@@ -12,6 +12,7 @@ import PerguntaClicada from "./pages/PerguntaClicada";
 import AjudaDrm from "./pages/AjudaDrm";
 import CriarPergunta from "./pages/CriarPergunta";
 import Inicial from "./pages/Inicial";
+import TermosDeUso from "./pages/TermosDeUso";
 
 export default function App(){
   const [user, setUser] = useState(null);
@@ -63,6 +64,7 @@ export default function App(){
         <Route path="/login" element={<Login />} />
         <Route path="/cadastro" element={<Cadastro />} />
         <Route path="/resetSenha" element={<ResetSenha />} />
+        <Route path="/termos" element={<TermosDeUso />}/>
         <Route 
           path="/home" 
           element={

@@ -1,0 +1,32 @@
+.content-termos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    background-color: #15163F;
+}
+
+.termos{
+    background-color: black;
+    color: #c5c5c5;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    width: 700px;
+    height: 700px;
+    overflow-y: auto;
+}
+
+.content-termos button{
+    border: none;
+    border-radius: 30px ;
+    margin-bottom: 300px;
+    margin-left: 500px;
+    margin-right: 500px;
+    padding: 10px 50px;
+    background: linear-gradient(1turn, #7c3aed, #06b6d4);
+    cursor: pointer;
+}
