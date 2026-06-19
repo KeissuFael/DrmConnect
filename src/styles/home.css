@@ -54,7 +54,7 @@
 }
 
 .form-text > textarea {
-  width: 100%;
+  width: 500px;
   border: none;
   border-radius: 10px;
   resize: none;
@@ -116,5 +116,11 @@
   .posts{
     margin-left: 0;
     
+  }
+  .form-post{
+    width: 80%;
+  }
+  .form-text textarea{
+    width: 80%;
   }
 }

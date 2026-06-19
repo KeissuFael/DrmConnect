@@ -151,7 +151,7 @@ export default function Home(){
         <div className="form-post">
           <div className="form-text">
             <img src={fotoDoPerfil} />
-            <textarea maxLength={200} ref={textareaRef} value={descricao} onChange={e => setDescricao(e.target.value)} placeholder="O que você está pensando hoje?" style={{width: "500px"}}></textarea>
+            <textarea maxLength={200} ref={textareaRef} value={descricao} onChange={e => setDescricao(e.target.value)} placeholder="O que você está pensando hoje?" ></textarea>
           </div>
 
           <div className="form-envio">
