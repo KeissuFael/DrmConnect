@@ -1,9 +1,10 @@
 .post-card-detalhado {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     border-radius: 20px;
     padding-bottom: 20px;
-    padding-right: 20px;
+    width: 100%;
 }
 
 .post-card-detalhado:hover {
@@ -35,13 +36,19 @@
 }
 
 .post-info {
+    clear: both;
+    display: block;
     padding: 0px;
     margin: 0px;
     background-color: rgba(25, 25, 119, 0.356);
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     padding-bottom: 20px;
+    overflow-wrap: break-word;
+    word-break: normal;
+    width: 100%;
 }
+
 
 .post-info > h1 {
     margin: 0px;
@@ -53,4 +60,5 @@
 .post-info > p {
     margin: 10px;
     font-size: 14px;
+    max-width: 100%;
 }
