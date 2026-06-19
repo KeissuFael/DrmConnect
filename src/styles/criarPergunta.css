@@ -1,18 +1,21 @@
 .criarPergunta {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    flex-direction: column; 
+    align-items: center;
     margin: 0px;
     padding: 0px;
     background-color: #010a36;
     height: 100vh;
     overflow: hidden;
+    width: 100%;
 }
 
 .barraLogo{
     display: flex;
     flex-direction: row;
     justify-content: center;
+    width: 100%;
+    padding-bottom: 100px;
 }
 
 .barraLogo > img {
@@ -24,6 +27,7 @@
     width: 15%;
     margin-top: 20px;
     margin-right: 5px;
+    height: 10%;
 }
 
 .barraDireita {
@@ -31,6 +35,7 @@
     margin-top: 20px;
     margin-left: 5px;
     border: none; 
+    height: 10%;
 }
 
 .criarPergunta > h1 {
@@ -43,18 +48,16 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-top: 50px;
-    padding-bottom: 400px;
+    align-items: center;
+    width: 40%;
 }
 
 .criarPergunta-entrada > input {
-    margin-left: 400px;
-    margin-right: 400px;
-    margin-bottom: 50px;
-    width: 40%;
-    height: 8%;
+    width: 80%;
+    height: 40px;
     padding-left: 10px;
     padding-right: 10px;
+    margin-bottom: 50px;
     background-color: rgba(22, 25, 78, 0.466);
     border-radius: 10px;
     border: none 1px;
@@ -70,15 +73,14 @@
 }
 
 .criarPergunta-entrada > textarea {
-    margin-left: 300px;
-    margin-right: 300px;
-    padding-bottom: 80px;
-    margin-bottom: 100px;
-    padding-top: 30px;
-    padding-left: 20px;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
     background-color: rgba(22, 25, 78, 0.466);
     border: 1px none;
     border-radius: 20px;
+    resize: none;
+    
 }
 
 .criarPergunta-entrada > textarea::placeholder {
@@ -91,15 +93,10 @@
 }
 
 .criarPergunta button {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     border: none;
     border-radius: 30px ;
-    margin-bottom: 300px;
-    margin-left: 500px;
-    margin-right: 500px;
     padding: 15px;
     background: linear-gradient(1turn, #7c3aed, #06b6d4);
     cursor: pointer;
+    margin-top: 50px;
 }
